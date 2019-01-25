@@ -1,0 +1,3 @@
+mixin nav-label({ active=false, url='', label='' }={})
+    li(class=active? 'active' : '')
+        a.font-weight-bold(href=url)= label

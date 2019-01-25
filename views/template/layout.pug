@@ -1,0 +1,37 @@
+include ./mixins-require
+html
+    head
+        include ./head
+        block head
+    body(data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0")
+        .site-wrap
+            .site-mobile-menu
+                .site-mobile-menu-header
+                    .site-mobile-menu-close.mt-3
+                        .icon-close2.js-menu-toggle
+            .site-navbar-wrap.js-site-navbar.bg-white
+                .container
+                    .site-navbar.bg-light
+                        .py-1
+                            .row.align-items-center
+                                .col-2
+                                    .mb-0.site-logo
+                                        img(src="/logo.png")
+                                .col-10
+                                    nav.site-navigation.text-right(role="navigation")
+                                        .container
+                                            .d-inline-block.d-lg-none.ml-md-0.mr-auto.py-3
+                                                a.site-menu-toggle.js-menu-toggle.text-black(href="#")
+                                                    span.icon-menu.h3
+                                            ul.site-menu.js-clone-nav.d-none.d-lg-block
+                                                include ./navbar
+            div(style="height: 113px;")
+            .slide-one-item.home-slider.owl-carousel.owl-loaded.owl-drag
+                .owl-stage-outer
+                    .owl-stage
+                        .row
+                            .col-md-8.offset-md-2
+                                img(src="/competition_image.jpg" width="100%")
+                        
+            block content
+            include ./footer

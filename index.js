@@ -20,7 +20,7 @@ db.authenticate()
 
 
 // SET Application Settings
-app.set('view engine', 'views');
+app.set('view engine', 'pug');
 app.set('views', './views');
 
 
@@ -49,12 +49,25 @@ app.use(methodOverride((req, res) => {
     }
 }));
 
+
+// Routes
+const info = require('./routes/info');
+
+app.use(info);
+
+
+
 // Maintain session as variable
 app.use((req,res,next) => {
     res.locals.session = req.session;
     next();
 });
 
+
+// Redirect / => /info
+app.get("/", (req, res) => {
+    res.redirect("/info");
+})
 
 
 app.listen(PORT, () => {
