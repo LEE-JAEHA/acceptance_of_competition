@@ -1,0 +1,8 @@
+{
+    "databaseHost": "localhost",
+    "databaseUser": "root",
+    "databasePassword": "",
+    "database": "competition",
+    "adminID": "admin",
+    "adminPassword": "dlwogk"
+}
