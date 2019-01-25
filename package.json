@@ -1,0 +1,28 @@
+{
+  "name": "acceptance_of_competition",
+  "version": "1.0.0",
+  "description": "공모전 접수 페이지",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sogangCSmaster/acceptance_of_competition.git"
+  },
+  "author": "유승재",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sogangCSmaster/acceptance_of_competition/issues"
+  },
+  "homepage": "https://github.com/sogangCSmaster/acceptance_of_competition#readme",
+  "dependencies": {
+    "bluebird": "^3.5.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.1",
+    "mysql": "^2.16.0",
+    "pug": "^2.0.3"
+  }
+}
