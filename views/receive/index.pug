@@ -1,0 +1,43 @@
+extends ./../template/layout
+
+block content
+    .site-section.block-15
+        .container
+            .row
+                .col-md-6.mx-auto.text-center.mb-5.section-heading
+                    h2 접수하기
+            
+            form
+                .row
+                    .col-md-12
+                        h5.font-weight-bold(style="font-weight: 900;") 개인정보 수집 및 이용 동의서
+                    br
+                    .col-md-12
+                        .pre-scrollable(style="max-height: 300px;")
+                            if infos.termsofuse
+                                p= infos.termsofuse
+                            else
+                                p(style="color: red;") 동의서를 관리자페이지에서 작성해주세요.
+                .row
+                    .col-md-11
+                        small(style="font-weight: 900;") 개인정보 수집 및 이용에 대한 안내를 확인하였으며 개인정보 수집·이용에 동의합니다.
+                    .col-md-1
+                        input(type="radio" name="terms" value="agree")
+                        span= " 동의함"
+
+                .row.mt-5
+                    .col-md-12
+                        h5.font-weight-bold(style="font-weight: 900;") 저작권 관련 안내
+                    br
+                    .col-md-12
+                        .pre-scrollable(style="max-height: 300px;")
+                            if infos.copyright
+                                p= infos.copyright
+                            else
+                                p(style="color: red;") 저작권 안내서를 관리자페이지에서 작성해주세요.
+                .row
+                    .col-md-11
+                        small(style="font-weight: 900;") 위의 내용을 확인 했으며 그 내용에 동의합니다.
+                    .col-md-1
+                        input(type="radio" name="copyright" value="agree")
+                        span= " 동의함"

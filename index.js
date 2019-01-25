@@ -51,8 +51,10 @@ app.use(methodOverride((req, res) => {
 
 // Routes
 const info = require('./routes/info');
+const receive = require('./routes/receive');
 
 app.use(info);
+app.use(receive);
 
 
 

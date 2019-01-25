@@ -6,3 +6,11 @@ block content
             .row
                 .col-md-6.mx-auto.text-center.mb-5.section-heading
                     h2 공모요강
+            
+            .row
+                if info
+                    div= info
+                else
+                    .container.text-center.mt-5
+                        h5 등록된 공모요강이 없습니다.
+                        p(style="color: red;") 관리자 페이지에서 추가해 주세요.

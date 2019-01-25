@@ -1,22 +1,26 @@
 const express = require('express');
 const router = express.Router();
+const Op = require('sequelize').Op;
 const { navigationName } = require('../../navigation');
 const help = require('../../models/help');
 
 // li class active
-router.use(navigationName("info"));
+router.use(navigationName("receive"));
 
-router.route("/info")
+router.route("/receive")
     .get((req, res, next) => {
-        help.findOne({
+        help.findAll({
             where: {
-                helpName: "info"
+                helpName: {
+                    [Op.or]: ["termsofuse", "copyright"]
+                }
             }
-        }).then((info) => {
-            res.render('info/index', { info });
+        }).then((infos) => {
+            res.render("receive/index", { infos })
         }).catch((err) => {
             next(err);
         })
     })
+
 
 module.exports = router;
