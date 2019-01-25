@@ -18,7 +18,6 @@ db.authenticate()
     .catch((err) => console.log('Error: ' + err));
 
 
-
 // SET Application Settings
 app.set('view engine', 'pug');
 app.set('views', './views');

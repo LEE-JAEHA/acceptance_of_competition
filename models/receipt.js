@@ -51,4 +51,8 @@ const receipt = db.define('receipt', {
     ]
 })
 
+
+// CREATE TABLE IF NOT EXISTS
+db.sync();
+
 module.exports = receipt;

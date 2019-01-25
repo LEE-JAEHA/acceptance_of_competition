@@ -1,13 +1,8 @@
 const Sequelize = require('sequelize');
 const db = require('../database/database');
 
-const notice = db.define('notice', {
-    id: {
-        type: Sequelize.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    },
-    title: {
+const help = db.define('help', {
+    helpName: {
         type: Sequelize.STRING,
         allowNull: false
     },
@@ -16,8 +11,7 @@ const notice = db.define('notice', {
     }
 })
 
-
 // CREATE TABLE IF NOT EXISTS
 db.sync();
 
-module.exports = notice;
+module.exports = help;
