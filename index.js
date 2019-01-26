@@ -57,6 +57,8 @@ const notice = require('./routes/notice');
 const qna = require('./routes/qna');
 const admin = require('./routes/admin');
 const dashboard = require('./routes/admin/dashboard');
+const logout = require('./routes/admin/logout');
+const adminInfo = require('./routes/admin/info');
 
 app.use(info);
 app.use(receive);
@@ -65,6 +67,8 @@ app.use(notice);
 app.use(qna);
 app.use(admin);
 app.use(dashboard);
+app.use(logout);
+app.use(adminInfo);
 
 
 // Maintain session as variable
@@ -79,6 +83,14 @@ app.get("/", (req, res) => {
     res.redirect("/info");
 })
 
+
+app.get("*", (req, res) => {
+    res.status(404).render('404');
+})
+
+app.get("*", (err, req, res) => {
+    res.status(500).render('500');
+})
 
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
