@@ -13,6 +13,9 @@ const notice = db.define('notice', {
     },
     content: {
         type: Sequelize.TEXT
+    },
+    author: {
+        type: Sequelize.STRING
     }
 })
 

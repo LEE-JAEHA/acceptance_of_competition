@@ -52,10 +52,17 @@ app.use(methodOverride((req, res) => {
 // Routes
 const info = require('./routes/info');
 const receive = require('./routes/receive');
+const confirm = require('./routes/confirm');
+const notice = require('./routes/notice');
+const qna = require('./routes/qna');
+const admin = require('./routes/admin');
 
 app.use(info);
 app.use(receive);
-
+app.use(confirm);
+app.use(notice);
+app.use(qna);
+app.use(admin);
 
 
 // Maintain session as variable

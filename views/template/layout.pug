@@ -30,8 +30,10 @@ html
                 .owl-stage-outer
                     .owl-stage
                         .row
-                            .col-lg-12.text-center
-                                img(src="/competition_image.jpg" height="433")
+                            .col-md-10.offset-md-1.text-center
+                                img(src="/competition_image.jpg" width="80%")
                         
             block content
             include ./footer
+            include ./script
+            block script

@@ -1,7 +1,13 @@
 const express = require('express');
-const route = express.Router();
+const router = express.Router();
+const config = require('../../config/config.json');
+const adminId = config.adminID;
+const adminPassword = config.adminPassword;
 
-route.route("/admin")
+router.route("/admin")
     .get((req, res, next) => {
-        // admin 부터 만들까
+        res.render("admin/index");
     })
+
+
+module.exports = router;

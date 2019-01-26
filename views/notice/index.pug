@@ -1,0 +1,36 @@
+extends ./../template/layout
+
+block script
+    script(src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js" type="text/javascript")
+    script(type="text/javascript").
+        $(document).ready(function () {
+            $('#qnatable').DataTable({
+                "paging": true // false to disable pagination (or any other option)
+            });
+            $('.dataTables_length').addClass('bs-select');
+        });
+    //- https://mdbootstrap.com/docs/jquery/tables/pagination/ for datatable example
+
+block content
+    .site-section.block-15
+        .container
+            .row
+                .col-md-6.mx-auto.text-center.mb-5.section-heading
+                    h2 공지사항
+            
+            .row
+                .col-md-12
+                    table#qnatable.table.table-striped
+                        thead
+                            tr
+                                th 번호
+                                th 제목
+                                th 작성자
+                                th 등록일자
+                        tbody
+                            each notice in notices
+                                tr
+                                    th= notice.id
+                                    th= notice.title
+                                    th= notice.author
+                                    th= notice.createdAt
