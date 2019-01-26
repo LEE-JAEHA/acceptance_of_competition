@@ -2,25 +2,25 @@ const express = require('express');
 const router = express.Router();
 const help = require('../../../models/help');
 
-router.route("/admin/tou")
+router.route("/admin/copyright")
     .get((req, res, next) => {
         if(!req.session.adminId){
             return res.redirect("/admin");
         }
         help.findOne({
             where: {
-                helpName: "termsofuse"
+                helpName: "copyright"
             }
-        }).then((tou) => {
-            if(!tou){
+        }).then((copyright) => {
+            if(!copyright){
                 help.create({
-                    helpName: "termsofuse",
-                    content: "동의서가 비었습니다."
+                    helpName: "copyright",
+                    content: "안내문이 비었습니다."
                 }).then(() => {
-                    return res.redirect("/admin/tou");
+                    return res.redirect("/admin/copyright");
                 })
             }
-            res.render('admin/tou/index', { tou });
+            res.render('admin/copyright/index', { copyright });
         }).catch((err) => {
             next(err);
         })
@@ -29,16 +29,16 @@ router.route("/admin/tou")
         if(!req.session.adminId){
             return res.redirect("/admin");
         }
-        var tou = req.body.tou;
+        var copyright = req.body.copyright;
         help.update({
-            content: tou
+            content: copyright
         }, {
             where: {
-                helpName: "termsofuse"
+                helpName: "copyright"
             }
         }).then(() => {
-            console.log("terms of use updated!");
-            res.redirect("/admin/tou");
+            console.log("copyright of use updated!");
+            res.redirect("/admin/copyright");
         })
     })
 

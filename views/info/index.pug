@@ -1,5 +1,14 @@
 extends ./../template/layout
 
+block script
+    script(src="https://cdn.rawgit.com/showdownjs/showdown/1.8.7/dist/showdown.min.js" type="text/javascript")
+    script(type="text/javascript").
+        $(document).ready(function() {
+            var conv = new showdown.Converter();
+            var txt = !{JSON.stringify(info.content)};
+            document.getElementById('info').innerHTML = conv.makeHtml(txt);
+        })
+
 block content
     .site-section.block-15
         .container
@@ -9,7 +18,7 @@ block content
             
             .row
                 if info
-                    div= info.content
+                    div#info= info.content
                 else
                     .container.text-center.mt-5
                         h5 등록된 공모요강이 없습니다.

@@ -1,0 +1,27 @@
+extends ../adminlayout
+
+block head
+    link(rel="stylesheet" href="/admin/css/bootstrap-markdown.min.css")
+    link(href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet")
+
+block script   
+    script(src="/admin/js/bootstrap-markdown.js" type="text/javascript")
+    script(src="/admin/js/markdown.js" type="text/javascript")
+
+
+block content
+    .container
+        .row
+            .col-md-12
+                h3 저작권 안내문 작성
+                p MARKDOWN으로 작성해주세요.
+                    span.ml-3
+                        a.btn.btn-danger.btn-sm(href="https://gist.github.com/ihoneymon/652be052a0727ad59601" target="_blank") 작성방법 보기
+            .col-md-12
+                form(action="/admin/copyright" method="POST")
+                    if copyright
+                        textarea#editMarkdown(name="copyright" data-provide="markdown" rows="20")= copyright.content
+                    else
+                        textarea#editMarkdown(name="copyright" data-provide="markdown" rows="20")
+                    hr
+                    button.btn.btn-primary(type="submit") 안내문 적용
