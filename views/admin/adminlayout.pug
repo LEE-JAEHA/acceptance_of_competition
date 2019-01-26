@@ -1,0 +1,53 @@
+doctype html
+html
+    head
+        include ./head
+    body(id="page-top")
+        nav.navbar.navbar-expand.navbar-dark.bg-dark.static-top
+            a.navbar-brand.mr-1(href="/admin/dashboard") ADMIN PAGE
+            button.btn.btn-link.btn-sm.text-white.order-1.order-sm-0(id="sidebarToggle" href="#")
+                i.fas.fa-bars
+            .d-none.d-md-inline-block.form-inline.ml-auto.mr-0.mr-md-3.my-2.my-md-0
+            ul.navbar-nav.ml-auto.ml-md-0
+                li.nav-item.no-arrow.mx-1
+                    a(href="/admin/logout")
+                        span.text-white Logout
+        
+        #wrapper
+            ul.sidebar.navbar-nav
+                li.nav-item
+                    a.nav-link(href="/admin/dashboard")
+                        i.fas.fa-fw.fa-tachometer-alt
+                        span= " 대시보드"
+                li.nav-item
+                    a.nav-link(href="/admin/receive")
+                        i.fas.fa-fw.fa-folder
+                        span= " 접수목록"
+                li.nav-item
+                    a.nav-link(href="/admin/notice")
+                        i.fas.fa-bell.fa-fw
+                        span= " 공지사항"
+                li.nav-item
+                    a.nav-link(href="/admin/qna")
+                        i.fas.fa-question.fa-fw
+                        span= " Q&A"
+                li.nav-item
+                    a.nav-link(href="/admin/info")
+                        i.fas.fa-pen.fa-fw
+                        span= " 공모요강"
+                li.nav-item
+                    a.nav-link(href="/admin/tou")
+                        i.fas.fa-pen.fa-fw
+                        span= " 동의서"
+                li.nav-item
+                    a.nav-link(href="/admin/etc")
+                        i.fas.fa-box-open.fa-fw
+                        span= " 기타"
+            
+            #content-wrapper
+                block content
+        a.scroll-to-top.rounded(href="#page-top")
+            i.fas.fa-angle-up
+        
+
+        include ./script

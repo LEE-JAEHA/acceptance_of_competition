@@ -56,6 +56,7 @@ const confirm = require('./routes/confirm');
 const notice = require('./routes/notice');
 const qna = require('./routes/qna');
 const admin = require('./routes/admin');
+const dashboard = require('./routes/admin/dashboard');
 
 app.use(info);
 app.use(receive);
@@ -63,6 +64,7 @@ app.use(confirm);
 app.use(notice);
 app.use(qna);
 app.use(admin);
+app.use(dashboard);
 
 
 // Maintain session as variable
