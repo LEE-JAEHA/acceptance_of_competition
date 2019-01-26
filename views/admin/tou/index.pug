@@ -13,15 +13,15 @@ block content
     .container
         .row
             .col-md-12
-                h3 공모요강 작성
+                h3 동의서 작성
                 p MARKDOWN으로 작성해주세요.
                     span.ml-3
                         a.btn.btn-danger.btn-sm(href="https://gist.github.com/ihoneymon/652be052a0727ad59601" target="_blank") 작성방법 보기
             .col-md-12
-                form(action="/admin/info" method="POST")
-                    if info
-                        textarea#editMarkdown(name="info" data-provide="markdown" rows="20")= info.content
+                form(action="/admin/tou" method="POST")
+                    if tou
+                        textarea#editMarkdown(name="tou" data-provide="markdown" rows="20")= tou.content
                     else
-                        textarea#editMarkdown(name="info" data-provide="markdown" rows="20")
+                        textarea#editMarkdown(name="tou" data-provide="markdown" rows="20")
                     hr
-                    button.btn.btn-primary(type="submit") 공모요강 적용
+                    button.btn.btn-primary(type="submit") 동의서 적용

@@ -2,25 +2,25 @@ const express = require('express');
 const router = express.Router();
 const help = require('../../../models/help');
 
-router.route("/admin/info")
+router.route("/admin/tou")
     .get((req, res, next) => {
         if(!req.session.adminId){
             return res.redirect("/admin");
         }
         help.findOne({
             where: {
-                helpName: "info"
+                helpName: "tou"
             }
-        }).then((info) => {
-            if(!info){
+        }).then((tou) => {
+            if(!tou){
                 help.create({
-                    helpName: "info",
-                    content: "모집요강이 비었습니다."
+                    helpName: "tou",
+                    content: "동의서가 비었습니다."
                 }).then(() => {
-                    return res.redirect("/admin/info");
+                    return res.redirect("/admin/tou");
                 })
             }
-            res.render('admin/info/index', { info });
+            res.render('admin/tou/index', { tou });
         }).catch((err) => {
             next(err);
         })
@@ -29,16 +29,16 @@ router.route("/admin/info")
         if(!req.session.adminId){
             return res.redirect("/admin");
         }
-        var info = req.body.info;
+        var tou = req.body.tou;
         help.update({
-            content: info
+            content: tou
         }, {
             where: {
-                helpName: "info"
+                helpName: "tou"
             }
         }).then(() => {
-            console.log("info updated!");
-            res.redirect("/admin/info");
+            console.log("terms of use updated!");
+            res.redirect("/admin/tou");
         })
     })
 

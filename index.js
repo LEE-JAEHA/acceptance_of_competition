@@ -59,6 +59,7 @@ const admin = require('./routes/admin');
 const dashboard = require('./routes/admin/dashboard');
 const logout = require('./routes/admin/logout');
 const adminInfo = require('./routes/admin/info');
+const adminTou = require('./routes/admin/tou');
 
 app.use(info);
 app.use(receive);
@@ -69,6 +70,7 @@ app.use(admin);
 app.use(dashboard);
 app.use(logout);
 app.use(adminInfo);
+app.use(adminTou);
 
 
 // Maintain session as variable

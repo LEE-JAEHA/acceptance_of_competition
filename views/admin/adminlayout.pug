@@ -2,6 +2,7 @@ doctype html
 html
     head
         include ./head
+        block head
     body(id="page-top")
         nav.navbar.navbar-expand.navbar-dark.bg-dark.static-top
             a.navbar-brand.mr-1(href="/admin/dashboard") ADMIN PAGE
@@ -51,3 +52,4 @@ html
         
 
         include ./script
+        block script
