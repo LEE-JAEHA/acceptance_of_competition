@@ -1,0 +1,37 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        title ADMIN LOGIN
+        meta(name="description" content="관리자 페이지 로그인")
+        meta(name="author" content)
+        link(href="/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet")
+        link(href="/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css")
+        link(href="/admin/css/sb-admin.css" rel="stylesheet")
+    
+    body.bg-dark
+        .container
+            .card.card-login.mx-auto.mt-5
+                .card-header Login
+                .card-body
+                    form(action="/admin" method="POST")
+                        .form-group
+                            .form-label-group
+                                input.form-control(type="text" id="inputId" placeholder="ID" required="required" autofocus="autofocus" name="adminId")
+                                label(for="inputId") Login ID
+                        .form-group
+                            .form-label-group
+                                input.form-control(type="password" id="inputPassword" placeholder="Password" required="required" name="adminPassword")
+                                label(for="inputPassword") Password
+                        button.btn.btn-secondary.btn-block(type="submit") Login
+                    if msg
+                        .row.col-md-12
+                            .text-center.align-items-center
+                                span.text-center.text-danger= msg
+
+
+        script(src="/admin/vendor/jquery/jquery.min.js" type="text/javascript")
+        script(src="/admin/vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript")
+        script(src="/admin/vendor/jquery-easing/jquery.easing.min.js")
